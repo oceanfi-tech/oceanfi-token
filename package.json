@@ -1,0 +1,41 @@
+{
+    "name": "another-nft",
+    "version": "1.0.0",
+    "description": "Another NFT Implementations",
+    "main": "index.js",
+    "scripts": {
+        "format": "prettier --write .",
+        "format_contracts": "prettier --write --plugin=prettier-plugin-solidity ./contracts/**/*.sol",
+        "compile": "hardhat clean && hardhat compile --force",
+
+        "test_token": "hardhat test --network hardhat test/token.js",
+
+        "deploy_token_bscTestnet": "hardhat run --network bscTestnet scripts/deploy-token.js",
+
+        "verify_token_bscTestnet": "hardhat verify --network bscTestnet --constructor-args ./scripts/argument/token.js 0x91AFd4DEF52a973c633130B01Fb0C808cE4197c7",
+        "coverage": "npx hardhat coverage"
+    },
+    "author": "thinhpn",
+    "license": "ISC",
+    "devDependencies": {
+        "@nomicfoundation/hardhat-chai-matchers": "^1.0.5",
+        "@openzeppelin/contracts": "^4.7.3",
+        "@openzeppelin/hardhat-upgrades": "^1.21.0",
+        "dotenv": "^16.0.1",
+        "ethers": "^5.7.2",
+        "hardhat": "^2.9.5",
+        "hardhat-gas-reporter": "^1.0.9",
+        "solidity-coverage": "^0.8.2"
+    },
+    "dependencies": {
+        "@nomicfoundation/hardhat-network-helpers": "^1.0.7",
+        "@nomicfoundation/hardhat-toolbox": "^2.0.1",
+        "@nomiclabs/hardhat-ethers": "^2.0.6",
+        "@nomiclabs/hardhat-etherscan": "^3.1.0",
+        "@nomiclabs/hardhat-waffle": "^2.0.2",
+        "@openzeppelin/test-helpers": "^0.5.16",
+        "ethers": "^5.7.2",
+        "prettier": "^2.8.3",
+        "prettier-plugin-solidity": "^1.1.1"
+    }
+}
